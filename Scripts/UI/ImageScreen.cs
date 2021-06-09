@@ -23,6 +23,7 @@ public class ImageScreen : MonoBehaviour
 
     public void OnBackButton()
     {
+        audioManager.DeleteAdded();
         SwitchToCaptureCanvas();
     }
 

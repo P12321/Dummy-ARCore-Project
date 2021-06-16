@@ -35,14 +35,4 @@ public class AudioManager : MonoBehaviour
 
         s.source.Play();
     }
-
-    public void Add(string name, AudioClip clip, float volume, float pitch)
-    {
-        sounds.Add(new Sound { name = name, clip = clip, volume = volume, pitch = pitch, source = gameObject.AddComponent<AudioSource>() });
-    }
-
-    public void DeleteAdded()
-    {
-        sounds.RemoveRange(2, sounds.Count - 2);
-    }
 }

@@ -7,14 +7,8 @@ public class ImageScreen : MonoBehaviour
     [SerializeField]
     private Image image;
 
-    private AudioManager audioManager;
-
     public event Action SwitchToCaptureCanvas;
-
-    private void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-    }
+    public event Action SwitchToTextCanvas;
 
     public void SetImage(Texture2D texture)
     {
@@ -23,18 +17,12 @@ public class ImageScreen : MonoBehaviour
 
     public void OnBackButton()
     {
-        audioManager.DeleteAdded();
         SwitchToCaptureCanvas();
     }
 
-    public void OnAudio1Button()
+    public void OnNextButton()
     {
-        audioManager.Play("Audio 1");
-    }
-
-    public void OnAudio2Button()
-    {
-        audioManager.Play("Audio 2");
+        SwitchToTextCanvas();
     }
 
     private void Update()

@@ -51,13 +51,16 @@ public class CanvasManager : MonoBehaviour
         captureCanvas.SetActive(true);
     }
 
-    private void TextToAudio()
+    private void TextToAudio(SelectedLanguage language, string text)
     {
-
+        textCanvas.SetActive(false);
+        audioCanvas.SetActive(true);
+        audioScreen.Initialise(language, text);
     }
 
     private void AudioToText()
     {
-
+        audioCanvas.SetActive(false);
+        textCanvas.SetActive(true);
     }
 }

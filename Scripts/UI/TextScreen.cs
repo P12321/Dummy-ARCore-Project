@@ -23,7 +23,7 @@ public class TextScreen : MonoBehaviour
     private SelectedLanguage selectedLanguage;
 
     public event Action SwitchToCaptureCanvas;
-    public event Action SwitchToAudioCanvas;
+    public event Action<SelectedLanguage, string> SwitchToAudioCanvas;
 
     private void Start()
     {
@@ -108,8 +108,7 @@ public class TextScreen : MonoBehaviour
             return;
         }
 
-        //SwitchToAudioCanvas();
-        print("Audio");
+        SwitchToAudioCanvas(selectedLanguage, text.text);
     }
 }
 
